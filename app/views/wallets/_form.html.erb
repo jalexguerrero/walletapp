@@ -1,0 +1,24 @@
+<%= form_with(model: wallet, class:" form") do |form| %>
+  <% if wallet.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(wallet.errors.count, "error") %> prohibited this wallet from being saved:</h2>
+
+      <ul>
+        <% wallet.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="flex-form">
+    <label>
+      <%# <i class="ion-location"></i> %>
+      <%= image_tag("icons/card-credit-icon.png") %>
+    </label>
+    <%= form.text_field :name, placeholder:"Name of wallet" %>
+    <%= form.submit %>
+  </div>
+
+        
+  
+<% end %>

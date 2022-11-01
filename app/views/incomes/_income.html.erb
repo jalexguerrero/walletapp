@@ -1,0 +1,13 @@
+<tr id="<%= dom_id income %>">
+  <td class="td-date">
+    <%= income.created_at.strftime("%Y/%m/%d") %>
+  </td>
+  
+  <td class="td-description">
+    <%= income.description.capitalize %>
+  </td>
+  
+  <td class="td-value">
+    <%= "+ #{number_to_currency(income.value)}" %>
+  </td>
+</tr>

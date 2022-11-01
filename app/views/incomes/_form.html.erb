@@ -1,0 +1,30 @@
+<%= form_with(model: income, class:"form") do |form| %>
+  <% if income.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(income.errors.count, "error") %> prohibited this income from being saved:</h2>
+
+      <ul>
+        <% income.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.text_field :wallet_id, value: wallet.id, type: :hidden %>
+
+
+  <div class="flex-form">
+    <%= form.label "Valor:", style: "display: block" %>
+    <%= form.text_field :value, placeholder: number_to_currency(0) %>
+  </div>
+
+  <div class="flex-form">
+    <%= form.text_area :description, placeholder:"Referencia(opcional)" %>
+  </div>
+
+  <div class="flex-form">
+    <%= form.submit %>
+    <%= link_to "Cancel", wallets_path %>
+  </div>
+<% end %>

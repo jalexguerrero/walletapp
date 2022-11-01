@@ -1,0 +1,25 @@
+<div id="<%= dom_id wallet %>" class="wallet">
+
+  <div class="container-wallet">
+    <div class="wallet-group">
+      <div class="wallet-title">
+        <p>
+          <%= wallet.name.capitalize %>
+        </p>
+        <small>
+          <%= "No. 00#{756544250 + wallet.id}" %>
+        </small>
+      </div>
+
+      <%= image_tag("icons/card-credit-icon.png") %>
+    </div>
+    <div class="wallet-group">
+      <p>Cupo disponible:</p>
+
+      <h3>
+        <%= number_to_currency(wallet.balance) %>
+      </h3>
+    </div>
+  </div>
+
+</div>

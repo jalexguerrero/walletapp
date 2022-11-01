@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Tus Cuentas</h1>
+
+<div id="wallets" class="container">
+  <% @wallets.each do |wallet| %>
+    <%= link_to wallet_path(wallet) do %>
+      <%= render wallet %>
+    <%end%>
+  <% end %>
+</div>
+
+<%= link_to "New wallet", new_wallet_path, class:"btn btn-shadow btn-border" %>
+

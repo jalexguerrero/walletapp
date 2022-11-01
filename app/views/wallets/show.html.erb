@@ -1,0 +1,32 @@
+
+<%= render @wallet %>
+
+<div>
+  <%= link_to "Edit this wallet", edit_wallet_path(@wallet) %> |
+  <%= link_to "Back to wallets", wallets_path %>
+  <%= link_to "new income", new_income_wallets_path(@wallet) %>
+
+  <%= button_to "Destroy this wallet", @wallet, method: :delete %>
+
+  <div class="container mt-3 transaction">
+    <h3 class="title">Tus movimientos</h3>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th class="td-date">Fecha aplicación</th>
+          <th class="td-description">Descripción</th>
+          <th class="td-value">Monto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @wallet.incomes.each do |income| %>
+          <tr>
+            <%= render income %>
+          </tr>
+        <% end %>
+        
+      </tbody>
+    </table>
+  
+  
+</div>
